@@ -69,7 +69,6 @@ This project aims to replicate the core functionalities and user interface of Wh
 
 ## Project Structure
 
-//
 
 **(Note:** This is a suggested project structure. Your actual structure might differ.)
 
