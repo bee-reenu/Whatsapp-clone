@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // For date formatting
 
-// Import the widgets and data
 import 'models.dart';
 import 'dummy_data.dart';
 import 'sidebar.dart';
@@ -23,11 +22,11 @@ class HomePage extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF111B21), // Main background
         dividerColor: Colors.white.withOpacity(0.15),
         colorScheme: ColorScheme.dark(
-          primary: Color(0xFF00A884), // WhatsApp green accent
-          secondary: Color(0xFF005D4B), // Darker green shade for sent messages
-          surface: Color(0xFF202C33), // Appbar, Search bar, received message bg
-          onSurface: Colors.grey[300]!, // Text/icons on surface elements
-          onBackground: Colors.grey[300]!, // Text/icons on main background
+          primary: Color(0xFF00A884),
+          secondary: Color(0xFF005D4B),
+          surface: Color(0xFF202C33),
+          onSurface: Colors.grey[300]!,
+          onBackground: Colors.grey[300]!,
           onPrimary: Colors.white,
           onSecondary: Colors.white,
         ),
@@ -46,7 +45,6 @@ class HomePage extends StatelessWidget {
           prefixIconColor: Colors.grey[500],
           fillColor: Color(0xFF202C33),
           filled: true,
-          // Default border for input fields (used in chat detail)
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),
             borderSide: BorderSide.none,
@@ -82,7 +80,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   String? _selectedChatId;
-  // Use copies of the dummy data to allow modification within the state
   final List<Chat> _chats = List<Chat>.from(dummyChatsData);
   final Map<String, List<Message>> _messages = Map<String, List<Message>>.from(
       dummyMessagesData
@@ -91,7 +88,6 @@ class _MainScreenState extends State<MainScreen> {
   void _onChatSelected(String chatId) {
     setState(() {
       _selectedChatId = chatId;
-      // Find the chat index to update unread count
       final chatIndex = _chats.indexWhere((c) => c.id == chatId);
       if (chatIndex != -1) {
         // Create a new Chat object with unreadCount = 0 if using immutable Chat
@@ -113,24 +109,23 @@ class _MainScreenState extends State<MainScreen> {
       isMe: true,
     );
 
-    setState(() {
-      // Add message
-      _messages.putIfAbsent(chatId, () => []).add(newMessage);
+    setState(
+      () {
+        // Add message
+        _messages.putIfAbsent(chatId, () => []).add(newMessage);
 
-      // Update chat list item
-      final chatIndex = _chats.indexWhere((c) => c.id == chatId);
-      if (chatIndex != -1) {
-        // If using immutable Chat:
-        final originalChat = _chats[chatIndex];
-        _chats[chatIndex] = originalChat.copyWith(
-          lastMessage: text.trim(),
-          timestamp: DateFormat.jm().format(newMessage.timestamp),
-        );
-        // Move chat to top (optional)
-        // final updatedChat = _chats.removeAt(chatIndex);
-        // _chats.insert(0, updatedChat);
-      }
-    });
+        final chatIndex = _chats.indexWhere((c) => c.id == chatId);
+        if (chatIndex != -1) {
+          final originalChat = _chats[chatIndex];
+          _chats[chatIndex] = originalChat.copyWith(
+            lastMessage: text.trim(),
+            timestamp: DateFormat.jm().format(newMessage.timestamp),
+          );
+          final updatedChat = _chats.removeAt(chatIndex);
+          _chats.insert(0, updatedChat);
+        }
+      },
+    );
   }
 
   @override

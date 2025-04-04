@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'models.dart'; // Import the Chat model
+import 'models.dart';
 
 // --- Chat List Panel Widget ---
 class ChatListPanel extends StatelessWidget {
@@ -16,7 +16,7 @@ class ChatListPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Use theme variable for brevity
+    final theme = Theme.of(context);
     final Color surfaceColor = theme.colorScheme.surface;
     final Color onSurfaceColor = theme.colorScheme.onSurface;
     final Color hintColor =
@@ -127,7 +127,7 @@ class _ChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Use theme variable for brevity
+    final theme = Theme.of(context);
     final Color primaryColor = theme.colorScheme.primary;
     final Color listTextColor =
         theme.listTileTheme.textColor ?? Colors.grey[200]!;
@@ -152,7 +152,7 @@ class _ChatItem extends StatelessWidget {
                     color: Colors.white70,
                     size: 30,
                   )
-                : null, // TODO: Add image loading
+                : null,
           ),
           title: Text(
             chat.name,

@@ -1,18 +1,18 @@
 import 'package:flutter/foundation.dart' show immutable;
 
-@immutable // Marks the class and subclasses as immutable
+@immutable
 class Chat {
-  final String id; // Unique ID for each chat
+  final String id;
   final String avatarUrl;
   final String name;
-  final String lastMessage; // Keep non-final if you update directly, or create new object on update
-  final String timestamp;   // Keep non-final if you update directly, or create new object on update
-  final int unreadCount; // Keep non-final if you update directly, or create new object on update
+  final String lastMessage;
+  final String timestamp;
+  final int unreadCount;
   final bool isPinned;
   final bool isMuted;
   final bool isGroup;
 
-  const Chat({ // Use const constructor for immutable class
+  const Chat({
     required this.id,
     this.avatarUrl = '',
     required this.name,
@@ -24,7 +24,6 @@ class Chat {
     this.isGroup = false,
   });
 
-  // Optional: Method to create a copy with updated values (if keeping class immutable)
   Chat copyWith({
     String? id,
     String? avatarUrl,
@@ -52,10 +51,10 @@ class Chat {
 
 @immutable
 class Message {
-  final String id; // Unique ID for each message
+  final String id;
   final String text;
   final DateTime timestamp;
-  final bool isMe; // True if sent by the current user
+  final bool isMe;
 
   const Message({
     required this.id,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // For date formatting
-import 'models.dart'; // Import Chat and Message models
+import 'models.dart';
 
 // --- Chat Detail Panel Widget ---
 class ChatDetailPanel extends StatefulWidget {
@@ -50,7 +50,6 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
     if (_messageController.text.trim().isNotEmpty) {
       widget.onSendMessage(_messageController.text.trim());
       _messageController.clear();
-      // FocusScope.of(context).unfocus(); // Optionally hide keyboard
     }
   }
 
@@ -77,9 +76,7 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final chatBackground = Container(
-        color: Color(
-            0xFF0b141a)); // Slightly different dark background for chat area
+    final chatBackground = Container(color: Color(0xFF0b141a));
 
     return Column(
       children: [
@@ -100,7 +97,7 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
                         color: Colors.white70,
                         size: 24,
                       )
-                    : null, // TODO: Image loading
+                    : null,
               ),
               SizedBox(width: 12.0),
               Expanded(
@@ -158,11 +155,9 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
                   final isMe = message.isMe;
                   final alignment =
                       isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start;
-                  final color = isMe
-                      ? Color(0xFF005D4B)
-                      : theme.colorScheme.surface; // Specific green for sent
-                  final textColor = theme.colorScheme
-                      .onSurface; // Generally good contrast on both bg colors
+                  final color =
+                      isMe ? Color(0xFF005D4B) : theme.colorScheme.surface;
+                  final textColor = theme.colorScheme.onSurface;
 
                   return Container(
                     margin: const EdgeInsets.symmetric(vertical: 4.0),
@@ -211,8 +206,7 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
                                 Padding(
                                   padding: const EdgeInsets.only(left: 4.0),
                                   child: Icon(Icons.done_all,
-                                      size: 16.0,
-                                      color: Colors.blue[300]), // Example ticks
+                                      size: 16.0, color: Colors.blue[300]),
                                 ),
                             ],
                           ),
@@ -228,20 +222,17 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
 
         // Message Input Area
         Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: 8.0, vertical: 8.0), // Adjusted padding
+          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
           decoration: BoxDecoration(
-            color: theme.scaffoldBackgroundColor, // Match main background
+            color: theme.scaffoldBackgroundColor,
             border: Border(
                 top: BorderSide(
                     color: theme.dividerColor.withOpacity(0.5), width: 0.5)),
           ),
           child: SafeArea(
-            // Ensure input isn't under system UI if keyboard pushes view
-            top: false, // Only apply bottom padding if needed
+            top: false,
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment
-                  .end, // Align items to bottom for multi-line
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 IconButton(
                   icon: Icon(Icons.emoji_emotions_outlined),
@@ -267,10 +258,9 @@ class _ChatDetailPanelState extends State<ChatDetailPanel> {
                       border: InputBorder.none,
                       filled: true,
                       fillColor: theme.inputDecorationTheme.fillColor ??
-                          theme.colorScheme.surface, // Use theme fill color
+                          theme.colorScheme.surface,
                       contentPadding: EdgeInsets.symmetric(
                           horizontal: 15.0, vertical: 10.0),
-                      // Adjust border radius directly if theme isn't enough
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
                         borderSide: BorderSide.none,

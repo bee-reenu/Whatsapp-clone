@@ -1,10 +1,6 @@
-import 'models.dart'; // Import the data models
+import 'models.dart';
 
-// Chat list (using IDs now)
-// Note: If Chat is immutable, you'd handle updates by creating new Chat objects
-// For simplicity here, we assume Chat fields (lastMessage, etc.) might be updated directly in state if Chat isn't strictly immutable.
 final List<Chat> dummyChatsData = [
-  // Renamed to avoid potential conflicts
   Chat(
     id: 'chat1',
     name: 'Reenu (You)',
@@ -62,7 +58,7 @@ final Map<String, List<Message>> dummyMessagesData = {
         isMe: false),
     Message(
         id: 'm1_2',
-        text: '✅✅ 2021 - AICTE Activity Point Progra...',
+        text: '2021 - AICTE Activity Point Progra...',
         timestamp: DateTime.now().subtract(Duration(minutes: 5)),
         isMe: true),
   ],

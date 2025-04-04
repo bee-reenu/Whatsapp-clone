@@ -11,7 +11,7 @@ class WhatsAppSidebar extends StatelessWidget {
     final Color bgColor = Theme.of(context).scaffoldBackgroundColor;
 
     return Container(
-      width: 75, // Fixed width for the sidebar
+      width: 75,
       color: bgColor,
       padding: const EdgeInsets.symmetric(vertical: 20.0),
       child: Column(
