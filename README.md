@@ -1,6 +1,6 @@
 # WhatsApp Clone - Flutter Project
 
-This is a WhatsApp clone project built using Flutter, created by a team of 3 developers as a learning exercise and demonstration of our mobile development skills.
+This is a WhatsApp clone project built using Flutter, created by a team of 3 developers as a learning exercise and demonstration of our development skills.
 
 ## Team Members
 
@@ -12,7 +12,7 @@ This is a WhatsApp clone project built using Flutter, created by a team of 3 dev
 
 This project aims to replicate the core functionalities and user interface of WhatsApp. While it's not a production-ready application, it showcases our ability to work with Flutter, manage state, handle UI elements, and potentially integrate with backend services (depending on the features implemented).
 
-## Features Implemented (List the features you have successfully implemented)
+## Features Implemented
 
 - **Basic UI Structure:**
   - Home screen with tabs for Chats, Status, and Calls.
@@ -68,7 +68,6 @@ This project aims to replicate the core functionalities and user interface of Wh
     ```
 
 ## Project Structure
-
 
 **(Note:** This is a suggested project structure. Your actual structure might differ.)
 
