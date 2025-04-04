@@ -4,9 +4,9 @@ This is a WhatsApp clone project built using Flutter, created by a team of 3 dev
 
 ## Team Members
 
-- **[B RINAAD AYAAN]** - [bee-reenu]
-- **[N NOORE TASLEEM]** - [ntasleem]
-- **[NIHA TABBASSUM]** - [nihaawati]
+- **B RINAAD AYAAN** - bee-reenu
+- **N NOORE TASLEEM** - ntasleem
+- **NIHA TABBASSUM** - nihaawati
 
 ## Overview
 
@@ -20,19 +20,14 @@ This project aims to replicate the core functionalities and user interface of Wh
   - Basic profile view.
 - **Chat Functionality (if implemented):**
   - Displaying a list of chats.
-  - Sending and receiving text messages (may be simulated or connected to a backend).
   - Displaying message timestamps.
 - **Status Functionality (if implemented):**
-  - Viewing status updates from contacts (may be static or simulated).
+  - Viewing status updates from contacts
 - **Calls Functionality (if implemented):**
-  - Displaying a list of call logs (may be static or simulated).
+  - Displaying a list of call logs
 - **UI Elements and Design:**
   - Utilizing Flutter widgets to create a user-friendly interface.
   - Adhering to a design similar to WhatsApp (colors, icons, layout).
-- **State Management (Specify the state management solution used, e.g., Provider, BLoC, Riverpod, setState):**
-  - [Mention the state management approach used and why.]
-- **Other Features (if any):**
-  - [List any other specific features you implemented.]
 
 ## Features Planned (List any features you intended to implement but haven't yet)
 
@@ -41,15 +36,11 @@ This project aims to replicate the core functionalities and user interface of Wh
 - Audio and video calling.
 - Status updates with images and videos.
 - Group chats.
-- End-to-end encryption (conceptual understanding).
-- User authentication.
 
 ## Technologies Used
 
 - **Flutter:** The primary framework for building the mobile application.
 - **Dart:** The programming language used for Flutter development.
-- **[List any other Flutter packages/dependencies used, e.g., provider, http, firebase_core, etc.]**
-- **[Mention any backend technologies or services you might have experimented with, e.g., Firebase, Node.js, etc. If none, you can omit this.]**
 
 ## Installation
 
@@ -58,8 +49,8 @@ This project aims to replicate the core functionalities and user interface of Wh
 2.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/bee-reenu/Whatsapp-clone]
-    cd [Whatsapp-clone]
+    git clone https://github.com/bee-reenu/Whatsapp-clone
+    cd Whatsapp-clone
     ```
 
 3.  **Get the dependencies:**
@@ -86,9 +77,9 @@ This project aims to replicate the core functionalities and user interface of Wh
 
 This project was a collaborative effort by:
 
-- **[B RINAAD AYAAN]** - [Frontend, Backend, UI/UX, Presentation]
-- **[N NOORE TASLEEM]** - [Frontend ]
-- **[NIHA TABBASSUM]** - [Report ]
+- **B RINAAD AYAAN** - Frontend, Backend, UI/UX, Presentation
+- **N NOORE TASLEEM** - Frontend
+- **NIHA TABBASSUM** - Report
 
 ## Future Improvements
 
