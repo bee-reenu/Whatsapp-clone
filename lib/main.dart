@@ -16,7 +16,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Homepage(),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xFF111B21),
+          title: Text(
+            'WhatsApp',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: HomePage(),
+      ),
     );
   }
 }
