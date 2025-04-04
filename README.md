@@ -29,7 +29,7 @@ This project aims to replicate the core functionalities and user interface of Wh
   - Utilizing Flutter widgets to create a user-friendly interface.
   - Adhering to a design similar to WhatsApp (colors, icons, layout).
 
-## Features Planned (List any features you intended to implement but haven't yet)
+## Features Planned
 
 - Real-time messaging using a backend service (e.g., Firebase, Socket.IO).
 - Sending and receiving media (images, videos).
