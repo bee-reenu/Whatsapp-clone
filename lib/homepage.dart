@@ -142,11 +142,9 @@ class MainScreen extends StatelessWidget {
             child: ChatListPanel(),
           ),
 
-          // If you want a three-panel layout (Sidebar, List, Chat View):
           Expanded(
             flex: 3, // Adjust flex factor as needed
             child: Container(
-              // Replace with your Chat Detail Widget
               color: Theme.of(context).scaffoldBackgroundColor,
               child: Center(
                   child: Text('Chat Detail Area',
@@ -187,14 +185,14 @@ class WhatsAppSidebar extends StatelessWidget {
               ),
               SizedBox(height: 20),
               _SidebarIcon(
-                icon: Icons.circle_outlined, // Status icon placeholder
+                icon: Icons.circle_outlined,
                 tooltip: 'Status',
                 color: iconColor,
                 onPressed: () => print('Status Tapped'),
               ),
               SizedBox(height: 20),
               _SidebarIcon(
-                icon: Icons.campaign_outlined, // Channels icon placeholder
+                icon: Icons.campaign_outlined,
                 tooltip: 'Channels',
                 color: iconColor,
                 onPressed: () => print('Channels Tapped'),
@@ -208,6 +206,7 @@ class WhatsAppSidebar extends StatelessWidget {
               ),
             ],
           ),
+
           // Bottom Icons Section
           Column(
             children: [
@@ -225,11 +224,9 @@ class WhatsAppSidebar extends StatelessWidget {
                 onPressed: () => print('Settings Tapped'),
               ),
               SizedBox(height: 25),
-              // Profile Picture Placeholder
               CircleAvatar(
                 radius: 18,
                 backgroundColor: Colors.grey[700],
-                // Replace with actual image loading if available
                 child: Icon(Icons.person, size: 20, color: Colors.white70),
               ),
             ],
@@ -240,7 +237,6 @@ class WhatsAppSidebar extends StatelessWidget {
   }
 }
 
-// Helper Widget for Sidebar Icons
 class _SidebarIcon extends StatelessWidget {
   final IconData icon;
   final String tooltip;
@@ -260,8 +256,7 @@ class _SidebarIcon extends StatelessWidget {
     return IconButton(
       icon: Icon(icon),
       iconSize: 24,
-      color: color ??
-          Theme.of(context).iconTheme.color, // Use provided or theme color
+      color: color ?? Theme.of(context).iconTheme.color,
       tooltip: tooltip,
       onPressed: onPressed,
       splashRadius: 20,
@@ -272,13 +267,11 @@ class _SidebarIcon extends StatelessWidget {
   }
 }
 
-// --- Chat List Panel Widget (No Scaffold here) ---
 class ChatListPanel extends StatelessWidget {
   const ChatListPanel({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Use colors from the theme for consistency
     final Color surfaceColor = Theme.of(context).colorScheme.surface;
     final Color onSurfaceColor = Theme.of(context).colorScheme.onSurface;
     final Color hintColor =
@@ -286,14 +279,13 @@ class ChatListPanel extends StatelessWidget {
             Colors.grey[500]!;
     final Color iconColor =
         Theme.of(context).iconTheme.color ?? Colors.grey[400]!;
-    final Color panelBackgroundColor = Theme.of(context)
-        .scaffoldBackgroundColor; // Or a slightly different shade like Color(0xFF111B21)
+    final Color panelBackgroundColor =
+        Theme.of(context).scaffoldBackgroundColor;
 
     return Container(
-      color: panelBackgroundColor, // Background for the chat list area
+      color: panelBackgroundColor,
       child: Column(
         children: [
-          // Header Section ("Chats" title and icons)
           Padding(
             padding: const EdgeInsets.only(
                 left: 16.0, right: 16.0, top: 15.0, bottom: 10.0),
@@ -303,8 +295,7 @@ class ChatListPanel extends StatelessWidget {
                 Text(
                   'Chats',
                   style: TextStyle(
-                    color:
-                        onSurfaceColor, // Use text color suitable for surface
+                    color: onSurfaceColor,
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   ),
@@ -312,20 +303,18 @@ class ChatListPanel extends StatelessWidget {
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.edit_square,
-                          color: iconColor), // Edit/New Chat Icon
+                      icon: Icon(Icons.edit_square, color: iconColor),
                       tooltip: 'New Chat',
-                      onPressed: () {/* Handle new chat action */},
+                      onPressed: () {},
                       splashRadius: 20,
                       constraints: BoxConstraints(),
                       padding: EdgeInsets.zero,
                     ),
                     SizedBox(width: 10),
                     IconButton(
-                      icon: Icon(Icons.filter_list,
-                          color: iconColor), // Filter/Menu Icon
+                      icon: Icon(Icons.filter_list, color: iconColor),
                       tooltip: 'Filter chats',
-                      onPressed: () {/* Handle filter action */},
+                      onPressed: () {},
                       splashRadius: 20,
                       constraints: BoxConstraints(),
                       padding: EdgeInsets.symmetric(horizontal: 5),
@@ -341,9 +330,9 @@ class ChatListPanel extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
             child: Container(
-              height: 40, // Consistent height for search bar
+              height: 40,
               decoration: BoxDecoration(
-                color: surfaceColor, // Use surface color from theme
+                color: surfaceColor,
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: TextField(
@@ -352,9 +341,7 @@ class ChatListPanel extends StatelessWidget {
                   hintText: 'Search or start a new chat',
                   hintStyle: TextStyle(color: hintColor, fontSize: 14),
                   prefixIcon: Icon(Icons.search, color: hintColor, size: 20),
-                  border: InputBorder.none, // Remove default border
-                  contentPadding: EdgeInsets.symmetric(
-                      vertical: 10.0), // Center hint text vertically
+                  contentPadding: EdgeInsets.symmetric(vertical: 10.0),
                 ),
               ),
             ),
@@ -362,13 +349,11 @@ class ChatListPanel extends StatelessWidget {
 
           // Chat List View
           Expanded(
-            // Allows the ListView to take remaining vertical space
             child: ListView.builder(
-              padding: EdgeInsets.only(top: 5.0), // Optional padding above list
+              padding: EdgeInsets.only(top: 5.0),
               itemCount: dummyChats.length,
               itemBuilder: (context, index) {
                 final chat = dummyChats[index];
-                // Use the _ChatItem helper widget for each list entry
                 return _ChatItem(chat: chat);
               },
             ),
@@ -379,7 +364,6 @@ class ChatListPanel extends StatelessWidget {
   }
 }
 
-// Helper Widget for individual Chat List Items
 class _ChatItem extends StatelessWidget {
   final Chat chat;
 
@@ -387,15 +371,12 @@ class _ChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get colors from theme for consistency
-    final Color primaryColor =
-        Theme.of(context).colorScheme.primary; // Green accent
+    final Color primaryColor = Theme.of(context).colorScheme.primary;
     final Color listTextColor =
         Theme.of(context).listTileTheme.textColor ?? Colors.grey[200]!;
     final Color subtitleColor = Colors.grey[500]!;
     final Color timestampColor = Colors.grey[500]!;
     final Color dividerColor = Theme.of(context).dividerColor;
-    // Determine badge text color based on background brightness
     final Color unreadBadgeTextColor =
         Theme.of(context).brightness == Brightness.dark
             ? Color(0xFF111B21)
@@ -431,8 +412,7 @@ class _ChatItem extends StatelessWidget {
           ),
           trailing: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment
-                .center, // Vertically center timestamp and badge
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 chat.timestamp,
@@ -443,35 +423,29 @@ class _ChatItem extends StatelessWidget {
                       : timestampColor, // Green if unread
                 ),
               ),
-              SizedBox(height: 6), // Spacing between time and badge/pin row
+              SizedBox(height: 6),
               Row(
-                mainAxisSize:
-                    MainAxisSize.min, // Row takes minimum space needed
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Show pin icon if chat is pinned
                   if (chat.isPinned)
                     Padding(
-                      padding: const EdgeInsets.only(
-                          right: 8.0), // Space between pin and badge
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: Icon(Icons.push_pin_rounded,
                           size: 18, color: subtitleColor),
                     ),
-                  // Show unread count badge if count > 0
                   Visibility(
-                    // Use Visibility for cleaner conditional UI
                     visible: chat.unreadCount > 0,
                     child: Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 2.5), // Pill shape padding
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 6, vertical: 2.5),
                       decoration: BoxDecoration(
                         color: primaryColor, // Green background
-                        borderRadius: BorderRadius.circular(
-                            12), // Rounded corners for pill shape
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
                         chat.unreadCount.toString(),
                         style: TextStyle(
-                          color: unreadBadgeTextColor, // Contrast text color
+                          color: unreadBadgeTextColor,
                           fontSize: 11.5,
                           fontWeight: FontWeight.bold,
                         ),
