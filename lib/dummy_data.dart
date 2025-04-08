@@ -45,6 +45,37 @@ final List<Chat> dummyChatsData = [
     lastMessage: 'Hiiii guys suppp',
     timestamp: '12:26 PM',
   ),
+  Chat(
+    id: 'chat2',
+    name: 'Friends forever lol',
+    lastMessage: 'Riya: Thank you guys',
+    timestamp: '01:36 PM',
+    unreadCount: 6,
+    isPinned: true,
+    isGroup: true,
+  ),
+  Chat(
+    id: 'chat3',
+    name: 'ISE 2025',
+    lastMessage: 'Gururaj (PO): Policy Bazaar team wo...',
+    timestamp: '01:19 PM',
+    unreadCount: 3,
+    isGroup: true,
+  ),
+  Chat(
+    id: 'chat4',
+    name: 'Daddy',
+    lastMessage: 'Waiting for this message...',
+    timestamp: '12:28 PM',
+    unreadCount: 1,
+  ),
+  Chat(
+    id: 'chat5',
+    name: '+91 79831 10682',
+    lastMessage: '+91 79831 10682 turned off disappeari...',
+    timestamp: '12:27 PM',
+    unreadCount: 1,
+  ),
 ];
 
 // Messages Data (Map keyed by chat ID)

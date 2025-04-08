@@ -48,7 +48,7 @@ class ChatListPanel extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.edit_square, color: iconColor),
                       tooltip: 'New Chat',
-                      onPressed: () {/* TODO */},
+                      onPressed: () {},
                       splashRadius: 20,
                       constraints: BoxConstraints(),
                       padding: EdgeInsets.zero,
