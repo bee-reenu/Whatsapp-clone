@@ -177,7 +177,7 @@ class _MainScreenState extends State<MainScreen> {
                               size: 80, color: Colors.grey[700]),
                           SizedBox(height: 20),
                           Text(
-                            'WhatsApp Clone',
+                            'WhatsApp Clone by Team-5',
                             style: TextStyle(
                                 fontSize: 24, color: Colors.grey[600]),
                           ),
