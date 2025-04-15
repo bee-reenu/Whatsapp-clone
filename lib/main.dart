@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF111B21),
-          title: Text(
+          title: const Text(
             'Bee WhatsApp',
             style: TextStyle(color: Colors.white),
           ),
