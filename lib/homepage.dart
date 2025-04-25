@@ -140,10 +140,9 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           // Sidebar
           WhatsAppSidebar(),
-
           // Chat List Panel
           Container(
-            width: 350, // Adjust width as needed
+            width: 350, 
             decoration: BoxDecoration(
               border: Border(
                 right: BorderSide(
