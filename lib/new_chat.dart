@@ -32,8 +32,9 @@ class ChatListScreen extends StatelessWidget {
           return SizedBox(
             width: 500,
             child: Container(
-constraints: BoxConstraints(maxHeight: 400),
-              padding: EdgeInsets.all(16),              child: ListTile(
+              constraints: BoxConstraints(maxHeight: 200),
+              padding: EdgeInsets.all(16),
+              child: ListTile(
                 leading: CircleAvatar(child: Text(chatList[index]['name']![0])),
                 title: Text(chatList[index]['name']!),
                 subtitle: Text(chatList[index]['message']!),
