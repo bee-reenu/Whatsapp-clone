@@ -1,3 +1,4 @@
+import 'package:clone/new_chat.dart';
 import 'package:flutter/material.dart';
 import 'models.dart';
 
@@ -48,7 +49,12 @@ class ChatListPanel extends StatelessWidget {
                     IconButton(
                       icon: Icon(Icons.edit_square, color: iconColor),
                       tooltip: 'New Chat',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => NewChat()),
+                        );
+                      },
                       splashRadius: 20,
                       constraints: BoxConstraints(),
                       padding: EdgeInsets.zero,
