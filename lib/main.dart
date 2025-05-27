@@ -1,4 +1,4 @@
-import 'package:clone/homepage.dart';
+import 'package:clone/Login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: HomePage(),
+        body: LoginPage(),
       ),
     );
   }

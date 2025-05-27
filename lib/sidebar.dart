@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// --- Sidebar Widget (Stateless) ---
+// --- Sidebar Widget ---
 class WhatsAppSidebar extends StatelessWidget {
   const WhatsAppSidebar({Key? key}) : super(key: key);
 
@@ -17,7 +17,6 @@ class WhatsAppSidebar extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // Top Icons
           Column(
             children: [
               _SidebarIcon(
